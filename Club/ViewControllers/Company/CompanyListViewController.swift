@@ -20,16 +20,16 @@ class CompanyListViewController: ClubViewController {
             }
         }
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Companies"
-        tableView.estimatedRowHeight = 100
-        tableView.rowHeight = UITableView.automaticDimension
-        tableView.tableFooterView = UIView(frame: CGRect.zero)
         searchVC.searchBar.delegate = self
         fetchCompanyData()
     }
+    
     func fetchCompanyData() {
+        // Fetching company data
         CompanyService().fetchCompanyListing { [weak self] result in
             switch result {
             case .success(let companyData):
@@ -42,6 +42,7 @@ class CompanyListViewController: ClubViewController {
         }
     }
     func memberFor(company: Company ){
+        // sending redirection to MemberViewController to show mmber listing
         guard let vc = storyboard?.instantiateViewController(withIdentifier: "membersVCStoryBoardID") as? MembersViewController else {
             return
         }
@@ -49,21 +50,26 @@ class CompanyListViewController: ClubViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }
+
 extension CompanyListViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        
+        // checking search text blank cases
         if searchText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
             companyList = fetchedCompanyList
             return
         }
+        
+        // Filtering the search text in company listing by name
         companyList = fetchedCompanyList.filter({(($0.companyName?.uppercased() ?? "").contains(searchText.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()))})
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         companyList = fetchedCompanyList
     }
+    
     func searchBarBookmarkButtonClicked(_ searchBar: UISearchBar) {
+        // Custom method for sorting
         let actionSheet = UIAlertController(title: "Sort", message: "Please Select an option", preferredStyle: .actionSheet)
         actionSheet.addAction(UIAlertAction(title: "✔︎ Company Name", style: .default , handler:nil))
         actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel , handler:nil))
@@ -72,6 +78,7 @@ extension CompanyListViewController: UISearchBarDelegate {
 }
 
 extension CompanyListViewController: UITableViewDelegate, UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return companyList.count
     }
@@ -84,6 +91,4 @@ extension CompanyListViewController: UITableViewDelegate, UITableViewDataSource 
         cell.memberFor = memberFor(company:)
         return cell
     }
-    
-    
 }

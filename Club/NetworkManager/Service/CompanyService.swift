@@ -17,7 +17,7 @@ class CompanyService: BaseService {
                 do {
                    let response = try JSONDecoder().decode([Company].self, from: responseData)
                     completion(.success(response))
-                } catch(let error) {
+                } catch {
                     completion(.failure(.cannotProcessResponse))
                 }
             case .failure(let error):

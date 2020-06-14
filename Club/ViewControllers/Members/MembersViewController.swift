@@ -24,7 +24,9 @@ class MembersViewController: ClubViewController {
         fullMemberList = memberList
         sortData()
     }
+    
     func sortData() {
+        // Listing sorting according to selected name or age
         if sortOptionl == .name {
             fullMemberList?.sort(by: {$1.fullName > $0.fullName})
             memberList?.sort(by: {$1.fullName > $0.fullName})
@@ -44,6 +46,8 @@ extension MembersViewController: UISearchBarDelegate {
             tableView.reloadData()
             return
         }
+        
+        // Filtering the search text in Member listing by name
         memberList = fullMemberList?.filter({$0.fullName.lowercased().contains(searchText.trimmingCharacters(in:.whitespacesAndNewlines).lowercased())})
         tableView.reloadData()
     }
@@ -54,13 +58,16 @@ extension MembersViewController: UISearchBarDelegate {
     }
     
     func searchBarBookmarkButtonClicked(_ searchBar: UISearchBar) {
+        // Sorting options(Name , Age)
         var nameOption = "Name"
         var ageOption = "Age"
+        
         if sortOptionl == .name {
             nameOption = "✔︎ Name";
         } else {
             ageOption = "✔︎ Age"
         }
+        
         let actionSheet = UIAlertController(title: "Sort", message: "Please Select an option", preferredStyle: .actionSheet)
         
         actionSheet.addAction(UIAlertAction(title: nameOption, style: .default) { (alert) in
@@ -71,6 +78,7 @@ extension MembersViewController: UISearchBarDelegate {
             self.sortOptionl = .age
             self.sortData()
         })
+        
         actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel , handler:nil))
         self.present(actionSheet, animated: true, completion: nil)
     }
