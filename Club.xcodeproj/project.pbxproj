@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		222AFC5D2492ADD900C2B6A7 /* CompanyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222AFC5C2492ADD900C2B6A7 /* CompanyTableViewCell.swift */; };
 		22B9EFE1248FF17000A41329 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B9EFE0248FF17000A41329 /* AppDelegate.swift */; };
 		22B9EFE3248FF17000A41329 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B9EFE2248FF17000A41329 /* SceneDelegate.swift */; };
 		22B9EFE8248FF17000A41329 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22B9EFE6248FF17000A41329 /* Main.storyboard */; };
@@ -15,9 +16,15 @@
 		22B9EFF52491663E00A41329 /* ClubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B9EFF42491663E00A41329 /* ClubViewController.swift */; };
 		22B9EFF72491667200A41329 /* CompanyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B9EFF62491667200A41329 /* CompanyListViewController.swift */; };
 		22B9EFF92491668300A41329 /* MembersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B9EFF82491668300A41329 /* MembersViewController.swift */; };
+		22E791C424938BA0000BDC31 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E791C324938BA0000BDC31 /* Company.swift */; };
+		22E791C624938BAC000BDC31 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E791C524938BAC000BDC31 /* Member.swift */; };
+		22E791C924939064000BDC31 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E791C824939064000BDC31 /* BaseService.swift */; };
+		22E791CC24939888000BDC31 /* CompanyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E791CB24939888000BDC31 /* CompanyService.swift */; };
+		22E791D02494E6A1000BDC31 /* MemberTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E791CF2494E6A1000BDC31 /* MemberTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		222AFC5C2492ADD900C2B6A7 /* CompanyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyTableViewCell.swift; sourceTree = "<group>"; };
 		22B9EFDD248FF17000A41329 /* Club.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Club.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22B9EFE0248FF17000A41329 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		22B9EFE2248FF17000A41329 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -28,6 +35,11 @@
 		22B9EFF42491663E00A41329 /* ClubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubViewController.swift; sourceTree = "<group>"; };
 		22B9EFF62491667200A41329 /* CompanyListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyListViewController.swift; sourceTree = "<group>"; };
 		22B9EFF82491668300A41329 /* MembersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembersViewController.swift; sourceTree = "<group>"; };
+		22E791C324938BA0000BDC31 /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
+		22E791C524938BAC000BDC31 /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
+		22E791C824939064000BDC31 /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
+		22E791CB24939888000BDC31 /* CompanyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyService.swift; sourceTree = "<group>"; };
+		22E791CF2494E6A1000BDC31 /* MemberTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +53,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		222AFC5A2492AD8C00C2B6A7 /* Company */ = {
+			isa = PBXGroup;
+			children = (
+				22B9EFF62491667200A41329 /* CompanyListViewController.swift */,
+				222AFC5C2492ADD900C2B6A7 /* CompanyTableViewCell.swift */,
+			);
+			path = Company;
+			sourceTree = "<group>";
+		};
+		222AFC5B2492ADA900C2B6A7 /* Members */ = {
+			isa = PBXGroup;
+			children = (
+				22B9EFF82491668300A41329 /* MembersViewController.swift */,
+				22E791CF2494E6A1000BDC31 /* MemberTableViewCell.swift */,
+			);
+			path = Members;
+			sourceTree = "<group>";
+		};
 		22B9EFD4248FF17000A41329 = {
 			isa = PBXGroup;
 			children = (
@@ -60,17 +90,53 @@
 		22B9EFDF248FF17000A41329 /* Club */ = {
 			isa = PBXGroup;
 			children = (
+				22E791C724938FBB000BDC31 /* NetworkManager */,
+				22E791BE24938AFF000BDC31 /* Modals */,
+				22E791CD24939D50000BDC31 /* ViewControllers */,
 				22B9EFE0248FF17000A41329 /* AppDelegate.swift */,
 				22B9EFE2248FF17000A41329 /* SceneDelegate.swift */,
-				22B9EFF62491667200A41329 /* CompanyListViewController.swift */,
-				22B9EFF82491668300A41329 /* MembersViewController.swift */,
-				22B9EFF42491663E00A41329 /* ClubViewController.swift */,
 				22B9EFE6248FF17000A41329 /* Main.storyboard */,
 				22B9EFE9248FF17200A41329 /* Assets.xcassets */,
 				22B9EFEB248FF17200A41329 /* LaunchScreen.storyboard */,
 				22B9EFEE248FF17200A41329 /* Info.plist */,
 			);
 			path = Club;
+			sourceTree = "<group>";
+		};
+		22E791BE24938AFF000BDC31 /* Modals */ = {
+			isa = PBXGroup;
+			children = (
+				22E791C324938BA0000BDC31 /* Company.swift */,
+				22E791C524938BAC000BDC31 /* Member.swift */,
+			);
+			path = Modals;
+			sourceTree = "<group>";
+		};
+		22E791C724938FBB000BDC31 /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				22E791C824939064000BDC31 /* BaseService.swift */,
+				22E791CA2493985B000BDC31 /* Service */,
+			);
+			path = NetworkManager;
+			sourceTree = "<group>";
+		};
+		22E791CA2493985B000BDC31 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				22E791CB24939888000BDC31 /* CompanyService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		22E791CD24939D50000BDC31 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				222AFC5A2492AD8C00C2B6A7 /* Company */,
+				222AFC5B2492ADA900C2B6A7 /* Members */,
+				22B9EFF42491663E00A41329 /* ClubViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,10 +211,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				22B9EFF72491667200A41329 /* CompanyListViewController.swift in Sources */,
+				222AFC5D2492ADD900C2B6A7 /* CompanyTableViewCell.swift in Sources */,
 				22B9EFE1248FF17000A41329 /* AppDelegate.swift in Sources */,
 				22B9EFF92491668300A41329 /* MembersViewController.swift in Sources */,
+				22E791C424938BA0000BDC31 /* Company.swift in Sources */,
 				22B9EFE3248FF17000A41329 /* SceneDelegate.swift in Sources */,
 				22B9EFF52491663E00A41329 /* ClubViewController.swift in Sources */,
+				22E791CC24939888000BDC31 /* CompanyService.swift in Sources */,
+				22E791D02494E6A1000BDC31 /* MemberTableViewCell.swift in Sources */,
+				22E791C624938BAC000BDC31 /* Member.swift in Sources */,
+				22E791C924939064000BDC31 /* BaseService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
